@@ -1,5 +1,5 @@
 let skeleton = [
-  "   hello!    ▄▐",
+  " hello owrld ▄▐",
   "       ▄▄▄  ▄██▄",
   "      ▐▀█▀▌    ▀█▄ ",
   "      ▐█▄█▌      ▀█▄",
@@ -51,19 +51,19 @@ const DIVIDER = 0.1
 const INDEX_DIVIDER = 20
 const STEP_INCREASE = 1
 const INTERVAL = 100
+const BLUR_DIVIDER = 10
+const BLUR_WIDTH = 20
 
 setInterval(() => {
   let rows = skeleton.map(e => [...e].map(c => handleChar(c)).join(""))
 
-  const blurValue = Math.sin(step / 10) * 20
+  const blurValue = Math.sin(step / BLUR_DIVIDER) * BLUR_WIDTH
 
   const blur = blurValue > 0 ? blurValue : 1
 
-  // console.log("blur", blur)
 
   rows = rows.map((row, index) => {
     const val = Math.abs(Math.floor(Math.sin((index / INDEX_DIVIDER + step) / DIVIDER) * blur))
-    // console.log("index ", index, val)
     const movement = handleChar(' ').repeat(val)
     return movement + row
   })
