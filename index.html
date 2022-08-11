@@ -2,11 +2,15 @@
 
 <head>
   <link rel="shortcut icon" href="#" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <script type="text/javascript" src="hello.js"></script>
 </head>
 
 <body>
   <div id="main"></div>
+  <div id="layer">
+    <a href="https://www.linkedin.com/in/jarkko-vallius/">lnkdn</a>
+  </div>
 </body>
 
 </html>
@@ -16,13 +20,44 @@
     font-family: monospace;
     font-size: 2em;
     line-height: 1em;
-    color: rgb(28, 102, 21)
+  }
+
+  .skeleton {
+    color: rgb(32 46 60)
+  }
+
+  .shadow {
+    color: rgb(27, 29, 31)
+  }
+
+  .shadow-2 {
+    color: rgb(126, 89, 20);
   }
 
   body {
-    background-color: black;
+    background-color: rgb(43 69 73);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  #layer {
+    position: absolute;
+  }
+
+  #layer>a {
+    font-family: monospace;
+    font-size: 2em;
+    line-height: 1em;
+
+    text-decoration: underline;
+    color: rgb(173 171 151);
+    display: block;
+  }
+
+  #layer>a:hover {
+    color: rgb(52, 197, 39);
   }
 </style>
